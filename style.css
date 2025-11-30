@@ -110,36 +110,31 @@
 }
 
 body {
-  display: flex;               /* Flexbox layout */
-  flex-direction: column;      /* Stack header, main, footer vertically */
-  min-height: 100vh;           /* Full viewport height */
+  display: flex;               
+  flex-direction: column;     
+  min-height: 100vh;          
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  background: #0c0c0c;
+  background: #000;
   color: #eaeaf3;
   margin: 0;
   font-family: 'Poppins' !important;
 }
 /* Generic section box style */
 .section-box {
-  margin: 40px auto;           /* space between layers */
-  padding: 40px 20px;          /* inner spacing */
-  border-radius: 12px;         /* rounded corners */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25); /* shadow separation */
-  max-width: 100vh;           /* keeps content centered */
+  margin: 40px auto;           
+  padding: 40px 20px;       
+  border-radius: 12px;        
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25); 
+  max-width: 100vh;           
 }
 
 /* Header layer */
-header {
-  background: linear-gradient(135deg, #1a1a1a, #333);
-  color: white;
-  border-radius: 0 0 12px 12px; /* only bottom corners rounded */
-  
-}
+
 
 /* About layer */
 #about {
-  background: #322424;
+  background: black;
   color: #ffffff;
   height: fit-content;
 }
@@ -147,34 +142,37 @@ header {
 
 /* Tools Layer */
 .tools {
-  background-color: #842A3B;
+  background: linear-gradient(135deg, #85586F, #CAA6A6);
 }
 .abouth1 {
-  color: #322424;
+  color: #fffbfb;
 }
 
 /* Projects layer */
 .projects{
-  background: #9A3F3F;
+  background: radial-gradient( #F8EDE3, #5A0E24);
 }
 
 #projects.section-box {
   background-color: #18c6a3;
-  margin-top: 60px;      /* space after tools */
+  margin-top: 60px;      
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
 
 /* Contact layer */
 #contact.section {
-  background: #7c3333;
-  color: #ffffff;
+   background: #050E3C;
+  color: #eaeaf3;
 }
+
+
 
 /* Footer layer */
 .footer {
-  background: #060606;
+ background: #0c0c0c;
   color: #aaa;
+
   text-align: center;
   padding: 20px;
 
@@ -267,7 +265,7 @@ header {
   align-items: center;
   padding: .50rem 5%;
   background: transparent;
-  position: sticky;
+  position: static;
   top: 0;
   color: #8e0d22;
 }
@@ -374,103 +372,81 @@ nav {
   font-weight: bold;
 }
 .btn:hover { background: #ffe082; }
+
+
+/* about */
 .about-gallery {
   display: flex;
   justify-content: center;
-  gap: 50px;
-  margin-top: 30px;
+  gap: 100px;
+  flex-wrap: wrap;
+  margin-top: 20px;
 }
 .about-card {
   position: relative;
-  width: 250px;
-  height: 300px;
+  width: 300px;
+  height: 400px;       
   overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
   cursor: pointer;
-}
-.about-card {
-  display: flex;
-  flex-direction: column; /* stack image and text vertically */
-  align-items: center;
-  width: 250px;
-  height: auto; /* let height adjust naturally */
-  margin: 20px; /* spacing between cards */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-.about-card img {
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 15px; /* gap between image and text */
-}
-
-.about-card .about-text {
-  font-size: 1rem;
-  color: #333;
-  text-align: center;
-}
-/* Default: show image, hide text */
 .about-card img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: opacity 0.4s ease;
+  object-fit: cover; 
+  transition: opacity 0.5s ease;
 }
 
 .about-card .about-text {
   position: absolute;
-  inset: 0; /* fills the card */
+  inset: 0;        
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #6b2121; /* dark red background */
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center;    
+  text-align: center;
   color: #fff;
-  font-size: 1.2rem;
-  font-weight: bold;
-  opacity: 0;          /* hidden by default */
-  transition: opacity 0.4s ease;
+  background: rgba(173, 91, 91, 0.7); 
+  padding: 15px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
-/* On hover: hide image, show text */
+.about-card .about-text h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.about-card .about-text h4 {
+  margin: 5px 0;
+  font-size: 16px;
+  font-weight: normal;
+  color: #ddd;
+}
+
+.about-card .about-text p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
 .about-card:hover img {
-  opacity: 0;
+  opacity: 0;       
 }
 
 .about-card:hover .about-text {
-  opacity: 1;
+  opacity: 1;          
 }
-.about-card {
-  position: relative;
-  width: 250px;
-  height: 300px;
-  overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.about-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-.about-card:hover img {
-  transform: scale(1.1);
-}
-.abouth1{
-  text-align: center;}
-
-
-
 /* Sections */
 .section { padding: 4rem 5%; text-align: center; }
 .section h2 { margin-bottom: 1rem; font-size: 2rem; }
 
 /* TOOLS */
 .container3 {
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -483,12 +459,10 @@ nav {
 }
 .abouth1 {
   text-align: center;
-  margin-top: 50px; /* space between heading and box */
+  margin-top: 50px; 
   font-size: 2rem;
  
 }
-
-
 
 .inner_div {
   text-align: center;
@@ -498,7 +472,7 @@ nav {
 .inner_div h1 {
   margin: 0;
   font-size: 2em;
-  color: #1a1a2e;
+  color: #212139;
 }
 
 .con {
@@ -518,7 +492,7 @@ nav {
   height: 60px;
   width: 160px;
   background-color: white;
-  color: black;
+  color: rgb(160, 65, 65);
   border: 2px solid #1a1a2e;
   border-radius: 20px;
   font-weight: 500;
@@ -531,8 +505,8 @@ nav {
 
 .text_logo:hover {
   transform: scale(1.1);
-  background-color: #f0f0f0;
-  color: red;
+   background-color: #76153C;
+  color: #ffffff;
   z-index: 2;
 }
 
@@ -555,7 +529,8 @@ nav {
   gap: 2rem;
 }
 .card {
-  background: #572323;
+   background-color: #575454;
+  color: #ffffff;
   border-radius: 10px;
   padding: 1rem;
   text-align: center;
@@ -582,12 +557,12 @@ nav {
 
 /* Footer */
 .footer {
-   /* Correct syntax */
+
   text-align: center;
   padding: 0rem;
   height: 40px;
   width: 100%;
-  margin: auto; /* optional: centers the footer horizontally */
+  margin: auto; 
 }
 
 
@@ -604,21 +579,27 @@ nav {
 
 /* 📱 Responsive styles for phone size */
 @media (max-width: 600px) {
-  /* General body adjustments */
+  
   body {
     font-size: 14px;
-    line-height: 1.4;
-    padding: 0 10px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
   }
 
   header {
+    display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding: 10px;
   }
 
   .logo {
+    display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 5px;
   }
 
@@ -632,15 +613,22 @@ nav {
   }
 
   nav .navbar {
+    display: flex;
     flex-direction: column;
     gap: 10px;
     padding: 0;
     margin: 10px 0;
+    align-items: center;
+  }
+
+  nav .navbar li {
+    list-style: none;
   }
 
   nav .navbar li a {
     font-size: 14px;
     padding: 8px;
+    text-decoration: none;
   }
 
   /* Hero section */
@@ -665,6 +653,7 @@ nav {
   /* About section */
   .section {
     padding: 20px 10px;
+    text-align: center;
   }
 
   .section h2 {
@@ -677,12 +666,14 @@ nav {
 
   /* Tools row */
   .container3 {
+    display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
   }
 
   .con {
+    display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
@@ -694,6 +685,7 @@ nav {
     height: auto;
     padding: 12px;
     font-size: 14px;
+    text-align: center;
   }
 
   .text_logo img {
@@ -710,6 +702,7 @@ nav {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    padding: 0 10px;
   }
 
   .card {
@@ -731,7 +724,27 @@ nav {
     font-size: 14px;
   }
 
+  .card a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+
+  .card a:hover {
+    background-color: #0056b3;
+  }
+
   /* Contact section */
+  #contact {
+    padding: 20px 10px;
+    text-align: center;
+  }
+
   #contact p {
     font-size: 14px;
     word-break: break-word;
