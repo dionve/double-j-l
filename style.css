@@ -592,7 +592,7 @@ nav {
 
 
 /* 📱 Responsive styles for phone size */
-@media (max-width: 600px) {
+@media (max-width: 100px) {
   
   body {
     font-size: 14px;
