@@ -182,6 +182,7 @@ body {
   position: relative;
   height: 100vh;
   overflow: hidden;
+  width: 100vh;
 }
 
 #bg-video {
