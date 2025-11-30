@@ -279,7 +279,7 @@ header {
   align-items: center;
   padding: .50rem 5%;
   background: transparent;
-  position: static;
+  position: sticky;
   top: 0;
   color: #8e0d22;
 }
@@ -592,7 +592,8 @@ nav {
 
 
 /* 📱 Responsive styles for phone size */
-@media (max-width: 100px) {
+@media (max-width: 600px) {
+  
   
   body {
     font-size: 14px;
