@@ -593,7 +593,24 @@ nav {
 
 /* 📱 Responsive styles for phone size */
 @media (max-width: 600px) {
-  
+    /* Responsive video */
+  .video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* keeps 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+  }
+
+  .video-container iframe,
+  .video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;   /* full width of phone screen */
+    height: 100%;  /* auto height based on aspect ratio */
+    border-radius: 8px; /* optional, keeps it neat */
+  }
   
   body {
     font-size: 14px;
